@@ -1,0 +1,41 @@
+<div class="p-4">
+    <span class="component-title">{{ title }}</span>
+    <p *ngIf="!actor">Loading...</p>
+    <div *ngIf="actor">
+        <main class="single">
+            <table class="table table-sm">
+                <tr>
+                    <td>First Name:</td>
+                    <td>
+                        <input [(ngModel)]="actor.firstName" class="rounded" type="text" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td>
+                        <input [(ngModel)]="actor.lastName" class="rounded" type="text" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td>
+                        <select [(ngModel)]="actor.gender" class="rounded">
+                            <option *ngFor="let g of genders" [ngValue]="g">
+                                {{ g }}
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Birth Date:</td>
+                    <td>
+                        <input [(ngModel)]="actor.birthDate" class="rounded" type="text" />
+                    </td>
+                </tr>
+            </table>
+        </main>
+        <span><button (click)="save()" class="btn btn-sm btn-primary">
+                Save
+            </button></span>
+    </div>
+</div>

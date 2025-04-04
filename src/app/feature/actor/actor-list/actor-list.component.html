@@ -1,0 +1,35 @@
+<div class="p-4">
+    <section class="heading">
+        <span class="page-title font-weight-bold font-italic">{{ title }}</span>
+        <a routerLink="/actor-create">
+            <img width="20" height="20" src="images/add-icon.png" title="Add New" />
+        </a>
+    </section>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Gender</th>
+                <th>Birth Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--       <tr *ngFor="let m of movies; let i = index">   -->
+            <tr *ngFor="let a of actors">
+                <td>{{a.id}}</td>
+                <td>{{a.firstName}}</td>
+                <td>{{a.lastName}}</td>
+                <td>{{a.gender}}</td>
+                <td>{{a.birthDate}}</td>
+                <td><a routerLink="/actor-edit/{{ a.id }}">
+                        <img src="images/pencil-icon.png" width="20" height="20" title="Edit Movie" />
+                    </a>|<a routerLink="/actor-detail/{{ a.id }}">
+                        <img src="images/details.png" width="20" height="20" title="Movie Details" />
+                    </a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

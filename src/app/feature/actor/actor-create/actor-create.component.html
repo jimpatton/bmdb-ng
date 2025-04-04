@@ -1,0 +1,34 @@
+<div class="p-4">
+    <h1>{{ title }}</h1>
+    <table>
+        <tr>
+            <td>First Name:</td>
+            <td>
+                <input [(ngModel)]="newActor.firstName" type="text" />
+            </td>
+        </tr>
+        <tr>
+            <td>Last Name:</td>
+            <td>
+                <input [(ngModel)]="newActor.lastName" type="text" />
+            </td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            <td>
+                <select [(ngModel)]="newActor.gender" class="rounded">
+                    <option *ngFor="let g of genders" [ngValue]="g">
+                        {{ g }}
+                    </option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Birth Date:</td>
+            <td>
+                <input [(ngModel)]="newActor.birthDate" type="text" />
+            </td>
+        </tr>
+    </table>
+    <button (click)="addActor()">Add Actor</button>
+</div>

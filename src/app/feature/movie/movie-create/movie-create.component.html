@@ -1,0 +1,34 @@
+<div class="p-4">
+    <h1>{{ title }}</h1>
+    <table>
+        <tr>
+            <td>Title:</td>
+            <td>
+                <input [(ngModel)]="newMovie.title" type="text" />
+            </td>
+        </tr>
+        <tr>
+            <td>Year:</td>
+            <td>
+                <input [(ngModel)]="newMovie.year" type="number" />
+            </td>
+        </tr>
+        <tr>
+            <td>Rating:</td>
+            <td>
+                <select [(ngModel)]="newMovie.rating" class="rounded">
+                    <option *ngFor="let rating of ratings" [ngValue]="rating">
+                        {{ rating }}
+                    </option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Director:</td>
+            <td>
+                <input [(ngModel)]="newMovie.director" type="text" />
+            </td>
+        </tr>
+    </table>
+    <button (click)="addMovie()">Add Movie</button>
+</div>
