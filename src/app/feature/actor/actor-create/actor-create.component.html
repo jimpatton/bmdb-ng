@@ -16,7 +16,7 @@
         <tr>
             <td>Gender:</td>
             <td>
-                <select [(ngModel)]="newActor.gender" class="rounded">
+                <select [(ngModel)]="newActor.gender" >
                     <option *ngFor="let g of genders" [ngValue]="g">
                         {{ g }}
                     </option>
@@ -26,7 +26,7 @@
         <tr>
             <td>Birth Date:</td>
             <td>
-                <input [(ngModel)]="newActor.birthDate" type="text" />
+                <input [(ngModel)]="newActor.birthDate" type="date" />
             </td>
         </tr>
     </table>

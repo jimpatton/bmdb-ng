@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './movie-edit.component.css'
 })
 export class MovieEditComponent implements OnInit, OnDestroy {
-  title:string = 'Movie Edit';
+ title:string = 'Movie Edit';
  movieId!:number;
  movie!: Movie
  subscription!:Subscription;

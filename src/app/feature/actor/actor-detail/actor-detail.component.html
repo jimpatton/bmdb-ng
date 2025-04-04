@@ -1,7 +1,7 @@
 <div *ngIf="actor" class="component">
     <section class="heading">
         <span class="page-title font-weight-bold font-italic">{{ title }}</span>
-        <span> | <a routerLink="/movie-list">Return to List</a></span>
+        <span> | <a routerLink="/actor-list">Return to List</a></span>
     </section>
     <main class="single">
         <table class="table table-sm">
@@ -30,7 +30,7 @@
             <tr>
                 <td>Birth Date:</td>
                 <td>
-                    <input [(ngModel)]="actor.birthDate" class="rounded" type="text" disabled />
+                    <input [(ngModel)]="actor.birthDate" class="rounded" type="date" disabled />
                 </td>
             </tr>
         </table>

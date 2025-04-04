@@ -34,4 +34,18 @@ export class ActorListComponent implements OnInit, OnDestroy{
     this.subscription.unsubscribe();
   }
 
+   delete(id: number) {
+    this.subscription = this.actorSvc.delete(id).subscribe({
+      next: () => {
+        // refresh the movie list
+        this.subscription = this.actorSvc.list().subscribe((resp) => {
+          this.actors = resp;
+        });
+      },
+      error: (err) => {
+        console.log('Error deleting movie for id: '+id);
+        alert('Error deleting movie for id: '+id);
+      }
+    });
+  }
 }

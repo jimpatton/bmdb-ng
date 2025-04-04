@@ -1,0 +1,32 @@
+<div class="p-4">
+    <h1>{{ title }}</h1>
+    <table>
+        <tr>
+            <td>Actor:</td>
+            <td>
+                <select [(ngModel)]="newCredit.actor" class="rounded">
+                    <option *ngFor="let a of actors" [ngValue]="a">
+                        {{a.lastName + ", " + a.firstName}}
+                    </option>
+                </select> 
+            </td>
+        </tr>
+        <tr>
+            <td>Movie:</td>
+            <td>
+                <select [(ngModel)]="newCredit.movie" class="rounded">
+                    <option *ngFor ="let m of movies" [ngValue]="m">
+                        {{m.title}}
+                    </option>
+                </select>
+            </td>
+        </tr>        
+        <tr>
+            <td>Role:</td>
+            <td>
+                <input [(ngModel)]="newCredit.role" type="text" />
+            </td>
+        </tr>
+    </table>
+    <button (click)="addCredit()">Add Credit</button>
+</div>

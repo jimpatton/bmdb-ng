@@ -30,4 +30,20 @@ export class MovieListComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
+
+   delete(id: number) {
+    this.subscription = this.movieSvc.delete(id).subscribe({
+      next: () => {
+        // refresh the movie list
+        this.subscription = this.movieSvc.list().subscribe((resp) => {
+          this.movies = resp;
+        });
+      },
+      error: (err) => {
+        console.log('Error deleting movie for id: '+id);
+        alert('Error deleting movie for id: '+id);
+      }
+    });
+  }
+
 }

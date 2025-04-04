@@ -1,0 +1,8 @@
+<nav>
+    <img src="images/clapper.png" alt="Clapper" class="menu-clapper">    
+    <ul>
+        <li *ngFor ="let mi of menuItems" title="{{mi.tooltip}}">
+            <a routerLink="{{mi.href}}">{{mi.display}}</a>
+        </li>      
+    </ul>    
+</nav>

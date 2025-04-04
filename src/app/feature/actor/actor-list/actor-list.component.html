@@ -28,6 +28,8 @@
                         <img src="images/pencil-icon.png" width="20" height="20" title="Edit Movie" />
                     </a>|<a routerLink="/actor-detail/{{ a.id }}">
                         <img src="images/details.png" width="20" height="20" title="Movie Details" />
+                    </a>|<a>
+                        <img src="images/delete.jpg" width="20" height="20" title="Delete Movie" (click)="delete(a.id)" />
                     </a></td>
             </tr>
         </tbody>
