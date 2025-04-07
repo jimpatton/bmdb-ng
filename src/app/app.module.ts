@@ -19,6 +19,7 @@ import { CreditListComponent } from './feature/credit/credit-list/credit-list.co
 import { CreditCreateComponent } from './feature/credit/credit-create/credit-create.component';
 import { CreditEditComponent } from './feature/credit/credit-edit/credit-edit.component';
 import { CreditDetailComponent } from './feature/credit/credit-detail/credit-detail.component';
+import { UserLoginComponent } from './feature/user/user-login/user-login.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { CreditDetailComponent } from './feature/credit/credit-detail/credit-det
     CreditListComponent,
     CreditCreateComponent,
     CreditEditComponent,
-    CreditDetailComponent
+    CreditDetailComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,7 @@ import { CreditDetailComponent } from './feature/credit/credit-detail/credit-det
 
   ],
   providers: [
-    provideClientHydration(withEventReplay()),
+    // provideClientHydration(withEventReplay()),
     provideHttpClient(withInterceptorsFromDi())
   ],
   bootstrap: [AppComponent]

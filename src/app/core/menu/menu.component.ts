@@ -8,7 +8,7 @@ import { MenuItem } from '../../model/menu.item';
   styleUrl: './menu.component.css'
 })
 export class MenuComponent implements OnInit {
-title = 'BMDB"';
+title = 'BMDB';
 menuItems: MenuItem[] = [];
 
 
