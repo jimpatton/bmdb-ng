@@ -1,7 +1,7 @@
 <nav>
         
     <ul>
-        <img src="images/clapper.png" alt="Clapper" class="menu-clapper">
+        <a routerLink=""><img src="images/clapper.png" alt="Clapper" class="menu-clapper"></a>
         <li *ngFor ="let mi of menuItems" title="{{mi.tooltip}}">
             <a routerLink="{{mi.href}}">{{mi.display}}</a>
         </li>      

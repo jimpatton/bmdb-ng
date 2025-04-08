@@ -23,7 +23,7 @@ export class MovieListComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
-    console.log('logged In User', this.sysSvc.loggedInUser);
+    console.log('logged In user:', this.sysSvc.loggedInUser);
     this.subscription = this.movieSvc.list().subscribe(
       (resp) => {
         this.movies = resp;

@@ -40,8 +40,7 @@ title:string = 'User Login';
     this.subscription = this.userSvc.login(this.userLogin).subscribe({
       next:(resp)=> {
         // what is happening here? how do we end up here inside of next? successful login
-        this.sysSvc.loggedInUser = resp;
-        
+        this.sysSvc.loggedInUser = resp;       
         //nav to movie list
         this.router.navigateByUrl('/movie-list');
       },
