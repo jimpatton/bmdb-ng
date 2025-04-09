@@ -3,6 +3,7 @@ import { Movie } from '../../../model/movie';
 import { Subscription } from 'rxjs';
 import { MovieService } from '../../../service/movie.service';
 import { SystemService } from '../../../service/system.service';
+import { User } from '../../../model/user';
 
 @Component({
   selector: 'app-movie-list',
@@ -15,6 +16,11 @@ export class MovieListComponent implements OnInit, OnDestroy {
   title: string = "Movie-List";
   movies!: Movie[];
   subscription!: Subscription;
+  welcomeMsg!:string;
+  loggedInUser!:User;
+  isAdmin:boolean = false;
+  sortOrder:string = 'asc';
+  sortCriteria:string ='id';
 
   constructor(
     private movieSvc: MovieService,
@@ -23,6 +29,9 @@ export class MovieListComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
+    this.loggedInUser = this.sysSvc.loggedInUser;
+    this.isAdmin = this.loggedInUser.admin;
+    this.welcomeMsg = `Hello, ${this.loggedInUser.firstName}!`;
     console.log('logged In user:', this.sysSvc.loggedInUser);
     this.subscription = this.movieSvc.list().subscribe(
       (resp) => {
@@ -46,6 +55,13 @@ export class MovieListComponent implements OnInit, OnDestroy {
         alert('Error deleting movie for id: '+id);
       }
     });
+  }
+
+  sortBy(column:string):void{
+    if (column == this.sortCriteria){
+      this.sortOrder = (this.sortOrder == "desc") ? "asc": "desc"
+    }
+    this.sortCriteria = column;
   }
 
 }

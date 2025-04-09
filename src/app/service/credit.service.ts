@@ -33,4 +33,9 @@ export class CreditService {
   delete(id: number): Observable<any> {
     return this.http.delete(URL + '/' + id) as Observable<Credit>;
   }
+
+  getCreditsForMovieId(movieId:number): Observable<Credit[]> {
+    return this.http.get(URL + '/movie-credits/'+ movieId) as Observable<Credit[]>;
+
+  }
 }

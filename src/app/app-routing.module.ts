@@ -14,6 +14,7 @@ import { CreditDetailComponent } from './feature/credit/credit-detail/credit-det
 import { CreditEditComponent } from './feature/credit/credit-edit/credit-edit.component';
 import { CreditListComponent } from './feature/credit/credit-list/credit-list.component';
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
+import { MovieCreditsComponent } from './feature/movie/movie-credits/movie-credits.component';
 
 const routes: Routes = [
   {path:'', redirectTo: 'user-login', pathMatch: 'full'},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path:'movie-create', component: MovieCreateComponent},
   {path:'movie-edit/:id', component: MovieEditComponent},
   {path:'movie-detail/:id', component: MovieDetailComponent}, 
+  {path:'movie-credits/:id', component: MovieCreditsComponent}, 
   {path:'actor-list', component: ActorListComponent},
   {path:'actor-create', component: ActorCreateComponent},
   {path:'actor-edit/:id', component: ActorEditComponent},

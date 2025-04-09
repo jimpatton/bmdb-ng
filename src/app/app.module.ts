@@ -20,6 +20,8 @@ import { CreditCreateComponent } from './feature/credit/credit-create/credit-cre
 import { CreditEditComponent } from './feature/credit/credit-edit/credit-edit.component';
 import { CreditDetailComponent } from './feature/credit/credit-detail/credit-detail.component';
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
+import { MovieCreditsComponent } from './feature/movie/movie-credits/movie-credits.component';
+import { SortPipe } from './pipe/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { UserLoginComponent } from './feature/user/user-login/user-login.compone
     CreditCreateComponent,
     CreditEditComponent,
     CreditDetailComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    MovieCreditsComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,

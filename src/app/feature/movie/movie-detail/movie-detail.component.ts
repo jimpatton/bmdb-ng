@@ -3,6 +3,8 @@ import { Subscription } from 'rxjs';
 import { Movie } from '../../../model/movie';
 import { MovieService } from '../../../service/movie.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SystemService } from '../../../service/system.service';
+import { User } from '../../../model/user';
 
 @Component({
   selector: 'app-movie-detail',
@@ -15,16 +17,21 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
    movieId!:number;
    movie!: Movie
    subscription!:Subscription;
+   loggedInUser!:User;
+     isAdmin:boolean = false;
 
 constructor(
   private movieSvc: MovieService,
   private router: Router,
   private actRoute: ActivatedRoute,
+  private sysSvc: SystemService,
  ) {}
 
 
    
   ngOnInit(): void {
+    this.loggedInUser = this.sysSvc.loggedInUser;
+    this.isAdmin = this.loggedInUser.admin;
     //get the movie id from the url
     this.actRoute.params.subscribe((parms) => {
       this.movieId = parms['id'];

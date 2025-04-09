@@ -1,9 +1,17 @@
-<nav>
-        
+
+<nav>        
     <ul>
         <a routerLink=""><img src="images/clapper.png" alt="Clapper" class="menu-clapper"></a>
         <li *ngFor ="let mi of menuItems" title="{{mi.tooltip}}">
             <a routerLink="{{mi.href}}">{{mi.display}}</a>
-        </li>      
+        </li> 
+         <!-- <span
+    style="
+      float: right;
+      padding-right: 30px;
+      font-style: italic;
+      font-weight: bold;
+    "
+    >{{ welcomeMsg }}</span>      -->
     </ul>    
 </nav>

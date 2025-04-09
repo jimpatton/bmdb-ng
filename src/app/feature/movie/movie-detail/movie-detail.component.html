@@ -1,3 +1,4 @@
+
 <div *ngIf="movie" class="component">
     <section class="heading">
         <span class="page-title font-weight-bold font-italic">{{ title }}</span>
@@ -35,7 +36,7 @@
             </tr>
             </table>
             </main>
-            <span>
+            <span *ngIf="this.isAdmin">
                 <span><a routerLink="/movie-edit/{{ movie.id }}" class="btn btn-sm btn-warning">Edit</a></span>
                 <span>
                     |

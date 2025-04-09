@@ -1,0 +1,14 @@
+
+<p>movie-credits works!</p>
+<h1>Movie</h1>
+<select [(ngModel)]="movie" class="rounded" (change)="refreshCredits()" [compareWith]="compMovie" >
+                            <option *ngFor="let m of movies" [ngValue]="m">{{ m.title + '-' + m.year }}</option>
+                            </select>
+<hr>
+<h1>Credits</h1>
+<table>
+    <tr><td>Id</td><td>MovieId</td><td>ActorId</td><td>Role</td></tr>
+    <tr *ngFor="let c of credits">
+        <td>{{c.id}}</td><td>{{c.movie.id}}</td><td>{{c.actor.id}}</td><td>{{c.role}}</td>
+        </tr>
+</table>
